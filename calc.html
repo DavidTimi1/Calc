@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calc.css">
+    <script src="https://kit.fontawesome.com/9564db1e37.js" crossorigin="anonymous"></script>
+    
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div class="history">
+        <i class="fas fa-history"> HISTORY </i>
+        <div class="histSub" id="j0">
+            <div class="a j0"></div>
+            <div class="b j0"></div>
+        </div>
+        <div class="histSub" id="j1">
+            <div class="a j1"></div>
+            <div class="b j1"></div>
+        </div>
+        <div class="histSub" id="j2">
+            <div class="a j2"></div>
+            <div class="b j2"></div>
+        </div>
+        <div class="histSub" id="j3">
+            <div class="a j3"></div>
+            <div class="b j3"></div>
+        </div>
+        <div class="histSub" id="j4">
+            <div class="a j4"></div>
+            <div class="b j4"></div>
+        </div>
+        <div class="histSub" id="j5">
+            <div class="a j5"></div>
+            <div class="b j5"></div>
+        </div>
+        <div class="histSub" id="j6">
+            <div class="a j6"></div>
+            <div class="b j6"></div>
+        </div>
+        <div class="histSub" id="j7">
+            <div class="a j7"></div>
+            <div class="b j7"></div>
+        </div>
+        
+
+
+    </div>
+
+
+    <div class="calculator">
+        <div class="aux"></div>
+        <div class="calcBody">
+        <h4 id="creator">MADE BY: David</h4>
+        <div class="result">
+            <div id="display2"></div>
+            <input type="text" id="display1"/>
+        </div>
+        
+        <table>
+                <tr>
+                    <td><button class="operators" onclick="bracket1('()')" >(</button></td>
+                    <td><button class="operators" onclick="bracket2('()')">)</button></td>
+                    <td><button class="operators" onclick="removeLast()">⌫</button></td>
+                    <td><button class="operators" onclick="clearScreen()">AC</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numbers"  onclick="add('7')" >7</button></td>
+                    <td><button class="numbers"  onclick="add('8')">8</button></td>
+                    <td><button class="numbers"  onclick="add('9')">9</button></td>
+                    <td><button class="operators" onclick="add('/')">÷</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numbers" onclick="add('4')">4</button></td>
+                    <td><button class="numbers" onclick="add('5')">5</button></td>
+                    <td><button class="numbers" onclick="add('6')">6</button></td>
+                    <td><button class="operators" onclick="add('*')">×</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numbers" onclick="add('1')">1</button></td>
+                    <td><button class="numbers" onclick="add('2')">2</button></td>
+                    <td><button class="numbers" onclick="add('3')">3</button></td>
+                    <td><button class="operators" onclick="add('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="operators" onclick="add('.')">.</button></td>
+                    <td><button class="numbers" onclick="add('0')">0</button></td>
+                    <td><button class="operators" onclick="add('+')">+</button></td>
+                    <td><button class="operators" onclick="solve()">=</button></td>
+                </tr>
+
+        </table>
+    </div>
+</div>
+    
+    
+</body>
+
+<script src="calc.js"></script>
+</html>
