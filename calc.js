@@ -18,6 +18,9 @@ width of both the webpage and the calculator */
 
 let calcBody =  document.querySelector(".calcBody");
 // let calcBody = document.getElementsByClassName("calcBody")
+let clicker = document.getElementById("clicker");
+let wiper = document.getElementById("wiper");
+let error = document.getElementById("error");
 
 
 // function getMargin(){
@@ -60,13 +63,16 @@ function add(val){
         // otherwise just add the value
         display.value += val;
     }
+    clicker.play();
 }
 
 function bracket1(){
     display.value += "(";
+    clicker.play();
 }
 function bracket2(){
-    display.value += ")"
+    display.value += ")";
+    clicker.play();
 }
 
 // to delete a value on the screen
@@ -78,20 +84,22 @@ function removeLast(){
         clearScreen();
 
     } else {
-// otherwise remove the last value on the screen
-      let a = display.value;
-    display.value =  a.slice(0,-1);
-  
+        // otherwise remove the last value on the screen
+        let a = display.value;
+        display.value =  a.slice(0,-1);
+
     }
-    
+    clicker.play();    
 }
 function clearScreen(){
+
     display.value = "";
     displaySub.innerHTML = "";
+    wiper.play();
 }
 
 let x;
-let j;
+let reset;
 // when the equals button is clicked calculate and display the answer
 function solve(){
     try{
@@ -109,13 +117,15 @@ function solve(){
 // when an error occurs display an error and delete the expression entered
     catch(err){
         display.value = errSyn; 
+        error.play();
         displaySub.innerHTML = "";
     }
     // if no error occcured store the calculation in history
     if ( displaySub.innerHTML != "" ){
         historyUpdate();
-    }
-    reset = true;
+        reset = true;
+        clicker.play();
+    }    
     return x;
     
 }
