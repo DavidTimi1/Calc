@@ -3,6 +3,15 @@
 //window.innerWidth to get width of the entir html document
 //window.innerHeight to get the Height of the entire html document
 
+let openHistory = function(){
+    document.getElementsByClassName("history")[0].style.animationName = "open";
+    document.getElementById("histbut").style.transform = "rotate(-180deg)";
+}
+let closeHistory = function(){
+    document.getElementsByClassName("history")[0].style.animationName = "close";
+    document.getElementById("histbut").style.transform = "rotate(0deg)";
+}
+
 
 /*In order to make the calculator always at the center of the webpage we will need to know the height and 
 width of both the webpage and the calculator */
@@ -22,7 +31,7 @@ let calcBody =  document.querySelector(".calcBody");
 let display = document.getElementById("display1");
 let displaySub = document.getElementById("display2");
 
-display.value = 0;
+display.value = "";
 // create a space to store recent calculations
 let history = Array(8);
 // each recent should contain what was calculated and the result
@@ -37,7 +46,6 @@ for ( i = 0; i < history.length; i++){
 let errNan = "NaN";
 let errSyn = "Syntax Error";
 
-
 // join the numeral that is clicked to the end 
 function add(val){
     // if an error message is displayed
@@ -45,8 +53,9 @@ function add(val){
         // clear the screen before adding a new value
         clearScreen();
     } 
-    if (display.value == 0){
+    if (reset){
         display.value = val;
+        reset = false;
     } else {
         // otherwise just add the value
         display.value += val;
@@ -76,13 +85,13 @@ function removeLast(){
     }
     
 }
-
 function clearScreen(){
     display.value = "";
     displaySub.innerHTML = "";
 }
 
 let x;
+let j;
 // when the equals button is clicked calculate and display the answer
 function solve(){
     try{
@@ -106,10 +115,10 @@ function solve(){
     if ( displaySub.innerHTML != "" ){
         historyUpdate();
     }
+    reset = true;
     return x;
     
 }
-
 // to prevent overflow of recent calculations
 function historyUpdate(){
 
