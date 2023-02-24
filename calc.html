@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calc.css">
-    <script src="https://kit.fontawesome.com/9564db1e37.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/9564db1e37.js" crossorigin="anonymous"></script> -->
+    <script src="9564db1e37.js"></script>
     
     <title>Calculator</title>
 </head>
 <body>
-
+    
+    <i class="fa-solid fa-bars" id="histbut" onclick="openHistory()"></i>
+    
     <div class="history">
-        <i class="fas fa-history"> HISTORY </i>
+        <i id="closebut" onclick="closeHistory()" class="fa-solid fa-xmark"></i>
+        <i class="fas fa-history">   HISTORY </i>
         <div class="histSub" id="j0">
             <div class="a j0"></div>
             <div class="b j0"></div>
@@ -49,6 +53,7 @@
 
 
     </div>
+    
 
 
     <div class="calculator">
@@ -57,12 +62,12 @@
         <h4 id="creator">MADE BY: David</h4>
         <div class="result">
             <div id="display2"></div>
-            <input type="text" id="display1"/>
+            <input type="text" id="display1" placeholder="0"/>
         </div>
         
         <table>
                 <tr>
-                    <td><button class="operators" onclick="bracket1('()')" >(</button></td>
+                    <td><button class="operators" onclick="bracket1('()')">(</button></td>
                     <td><button class="operators" onclick="bracket2('()')">)</button></td>
                     <td><button class="operators" onclick="removeLast()">⌫</button></td>
                     <td><button class="operators" onclick="clearScreen()">AC</button></td>
