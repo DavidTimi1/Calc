@@ -146,6 +146,7 @@ i{
         background-image: url("calcImg.jpg");
         background-size: contain;
         background-repeat: repeat;
+        overflow: hidden;
     }
 
     .history{
