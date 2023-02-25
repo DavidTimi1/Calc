@@ -4,6 +4,7 @@
 //window.innerHeight to get the Height of the entire html document
 
 let openHistory = function(){
+
     document.getElementsByClassName("history")[0].style.animationName = "open";
     document.getElementById("histbut").style.transform = "rotate(-180deg)";
 }
@@ -48,11 +49,12 @@ for ( i = 0; i < history.length; i++){
 //create variables to hold error messages
 let errNan = "NaN";
 let errSyn = "Syntax Error";
+let errUndef = "undefined"
 
 // join the numeral that is clicked to the end 
 function add(val){
     // if an error message is displayed
-    if( display.value == errNan || display.value == errSyn){
+    if( display.value == errNan || display.value == errSyn || display.value == errUndef ){
         // clear the screen before adding a new value
         clearScreen();
     } 
@@ -102,6 +104,9 @@ let x;
 let reset;
 // when the equals button is clicked calculate and display the answer
 function solve(){
+    if ( display.value == "" ){
+        return
+    }
     try{
 
         // initialize a variable to the current displayed expression
